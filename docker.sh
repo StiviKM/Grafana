@@ -30,7 +30,7 @@ rm -rf ~/.docker
 
 echo "=== Installing Docker dependencies and repo ==="
 sudo dnf -y install dnf-plugins-core
-sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo -y
 
 echo "=== Installing Docker packages ==="
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
