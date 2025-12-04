@@ -128,3 +128,13 @@ foreach ($rule in $firewallRules) {
 }
 
 Write-Host "Installation complete. Both services are running and persistent."
+
+# -------------------------
+# Extra: Replace port 9090 with 9182 in prometheus.yml
+# -------------------------
+(Get-Content "C:\Monitoring\Prometheus\prometheus-3.8.0.windows-amd64\prometheus.yml") -replace '9090', '9182' |
+    Set-Content "C:\Monitoring\Prometheus\prometheus-3.8.0.windows-amd64\prometheus.yml"
+
+Get-Content "C:\Monitoring\Prometheus\prometheus-3.8.0.windows-amd64\prometheus.yml"
+
+Restart-Service prometheus
